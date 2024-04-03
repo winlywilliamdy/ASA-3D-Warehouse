@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Item</title>
+    <link rel="stylesheet" href="./styles/item.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <ul>
+        <li><a href="./homepage.html">Home</a></li>
+        <li><button onclick="history.back()">Back</button></li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>Add A New Item</h1>
+      <p>Please enter the item informations:</p>
+      <div class="label-container">Item Name</div>
+      <input class="input-field" type="text" id="name" name="name" required />
+      <div class="label-container">Item Location</div>
+      <select name="location-names">
+        <option value="Warehouse_1">Warehouse 1</option>
+        <option value="Warehouse_2">Warehouse 2</option>
+      </select>
+      <div class="label-container">Item Weight</div>
+      <input class="input-field" type="text" id="name" name="name" required />
+      <div class="label-container">Item Length</div>
+      <input class="input-field" type="text" id="name" name="name" required />
+      <div class="label-container">Item Width</div>
+      <input class="input-field" type="text" id="name" name="name" required />
+      <input type="submit" value="Submit" />
+    </div>
+  </body>
+  <script type="module" src="./script/item.js"></script>
+</html>
