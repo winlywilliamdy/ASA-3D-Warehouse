@@ -11,22 +11,32 @@ function toggleSidebar() {
   }
 }
 
-// document.addEventListener("DOMContentLoaded", fetchData);
-fetchData();
+ fetchData();
+
 
 async function fetchData() {
   try {
-    //   const response = await fetch("https://api.example.com/data");
-    //   if (!response.ok) {
-    //     throw new Error("Failed to fetch data");
-    //   }
-    //   const data = await response.json();
-    const data = [{ "name": "warehouse_1" }, { "name": "warehouse_2" }];
-    displayData(data);
+    var res = [];
+    await fetch("http://localhost:3000/api/warehouse/warehouse")
+      .then((response) => response.json())
+      .then((data) => {
+        for (let i = 0; i < data["data"].length; i++) {
+          const element = data["data"][i];
+          res.push({
+            name: element["location"],
+            id: element["id"],
+          });
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   } catch (error) {
     console.error("Error fetching data:", error);
     // Handle error, e.g., display error message on the webpage
   }
+
+  displayData(res)
 }
 
 function displayData(data) {
@@ -41,12 +51,12 @@ function displayData(data) {
   for (let i = 0; i < data.length; i++) {
     const element = data[i];
     const listItem = document.createElement("a");
-    listItem.href = "./warehouse.html?id=42"
-    listItem.textContent = element['name']; // Assuming the API returns an array of objects with a 'name' property
+    listItem.href = "./warehouse.html?id=" + element['id'];
+    listItem.textContent = element["name"]; // Assuming the API returns an array of objects with a 'name' property
     dataList.appendChild(listItem);
 
     const breakItem = document.createElement("br");
-    dataList.appendChild(breakItem)
+    dataList.appendChild(breakItem);
   }
-  apiDataElement.appendChild(dataList)
+  apiDataElement.appendChild(dataList);
 }

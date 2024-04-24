@@ -1,20 +1,30 @@
 import queryString from "query-string";
 
 const parsed = queryString.parse(location.search);
-fetchWarehouseData(parsed['id']);
+await fetchWarehouseData(parsed["id"]);
 
 async function fetchWarehouseData(id) {
-  // fetch from API
-  console.log("Fetching warehouse data for warehouse_id : %a", id)
-  const data = [
-    {"name" : "item_1", "id" : 1},
-    {"name" : "item_2", "id" : 2},
-    {"name" : "item_3", "id" : 3},
-    {"name" : "item_4", "id" : 4}
-  ]
+  var res = [];
+  await fetch("http://localhost:3000/api/item/data")
+    .then((response) => response.json())
+    .then((data) => {
+      for (let i = 0; i < data['data'].length; i++) {
+        const element = data['data'][i];
+        console.log(element)
+        if(element['warehouseId'] == id){
+          res.push({
+            "name": element['item_name'],
+            "id": element['id']
+          })
+        }
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 
-  // display data from JSON
-  displayData(data)
+    // display data from JSON
+  displayData(res);
 }
 
 function displayData(data) {
