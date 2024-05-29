@@ -18,12 +18,10 @@ const firebaseConfig = {
 const firebase = initializeApp(firebaseConfig);
 
 async function getItemValues() {
-  var itemName = document.getElementById("itemName").value;
-  var sku = document.getElementById("sku").value;
-  var itemLocation = document.getElementById("locationName").value;
-  var itemWeight = document.getElementById("itemWeight").value;
-  var itemLength = document.getElementById("itemLength").value;
-  var itemWidth = document.getElementById("itemWidth").value;
+  var visitName = document.getElementById("visitName").value;
+  var weight = document.getElementById("weight").value;
+  var height = document.getElementById("height").value;
+  var note = document.getElementById("note").value;
   var objVal = document.getElementById("objFile");
   var mtlVal = document.getElementById("mtlFile");
   var pngVal = document.getElementById("pngFile");
@@ -32,13 +30,6 @@ async function getItemValues() {
   var pngURL;
 
   // Do something with the input values
-  console.log("Item Name: " + itemName);
-  console.log("SKU Code: " + sku);
-  console.log("Item Location: " + itemLocation);
-  console.log("Item Weight: " + itemWeight);
-  console.log("Item Length: " + itemLength);
-  console.log("Item Width: " + itemWidth);
-
   var objFile = objVal.files[0];
   var mtlFile = mtlVal.files[0];
   var pngFile = pngVal.files[0];
@@ -59,23 +50,55 @@ async function getItemValues() {
   });
 
   // POST to API
-  
+  var patientName = document.getElementById("patientName");
+
+  var body = {
+    visit_name: visitName,
+    threed_obj: objURL + "," + mtlURL + "," + pngURL,
+    patientId: parseInt(patientName.value),
+    doctorId: 1,
+    notes: note,
+    width: parseFloat(weight),
+    height: parseFloat(height),
+  };
+
+  console.log(body);
+
+  const options = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body), // Convert the JavaScript object to a JSON string
+  };
+
+  await fetch("http://localhost:3000/api/visit/create", options)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json(); // Parse the JSON response
+    })
+    .then((data) => {
+      console.log("Success:", data); // Handle the JSON data
+    })
+    .catch((error) => {
+      console.error("Error:", error); // Handle any errors
+    });
 }
 
 async function generateOptions() {
-  var itemLocation = document.getElementById("locationName");
+  var patientName = document.getElementById("patientName");
   var res = [];
-  await fetch("http://localhost:3000/api/warehouse/warehouse")
+  await fetch("http://localhost:3000/api/patient/data")
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       for (let i = 0; i < data["data"].length; i++) {
         const element = data["data"][i];
-        console.log(element);
         var option = document.createElement("option");
-        option.value = element["location"];
-        option.textContent = element["location"];
+        option.value = element["id"];
+        option.textContent = element["firstname"] + " " + element["lastname"];
 
-        itemLocation.appendChild(option);
+        patientName.appendChild(option);
       }
     })
     .catch((error) => {

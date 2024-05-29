@@ -8,9 +8,10 @@ body {
   height: 100%;
   width: 250px;
   position: fixed;
+  display: flex;
   top: 0;
   left: 0;
-  background-color: #595959;
+  background-color: #233142;
   padding-top: 20px;
 }
 
@@ -30,24 +31,51 @@ body {
 }
 
 .sidebar ul li a {
-  color: white;
+  color: #f95959;
   text-decoration: none;
-  transition: 20ms;
+  transition: 200ms;
+  font-weight: 700;
 }
 
 .sidebar ul li a:hover {
-  color: #333;
+  transition: 200ms;
+  color: #fff;
 }
 
 .content {
   margin-left: 250px;
   padding: 20px;
-}
-
-.content p {
-  color: #999999;
+  height: 80vh;
 }
 
 .content h1 {
-  color: #595959;
+  color: #233142;
+}
+
+.content a{
+  color: white;
+  text-decoration: none;
+  display: flex;
+  transition: 200ms;
+  padding: 2.5%;
+  font-size: small;
+  opacity: 50%;
+  font-weight: 200;
+  background-color: #505050;
+  border-radius: 5px;
+}
+
+.content a:hover{
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: large;
+  padding: 3%;
+  background-color: #233142;
+  opacity: 80%;
+  transition: 100ms;
+}
+
+.divider{
+  height: 85%;
 }

@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
-  <link rel="stylesheet" href="./styles/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
-<body>
-  <div class="container">
-    <form id="loginForm">
-      <h2>LOGIN</h2>
-      <div class="input-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Medical Database</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="left-container"></div>
+      <div class="right-container">
+        <div class="container">
+          <form id="loginForm">
+            <h2>Welcome to the 3D Medical Database</h2>
+            <div class="input-group">
+              <!-- <label for="username">Email Address</label> -->
+              <input type="text" id="username" name="username" required placeholder="Email Address" />
+            </div>
+            <div class="input-group">
+              <!-- <label for="password">Password</label> -->
+              <input type="password" id="password" name="password" required placeholder="Password" />
+            </div>
+            <button type="submit">Login</button>
+          </form>
+        </div>
       </div>
-      <div class="input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-      </div>
-      <button type="submit">Login</button>
-    </form>
-  </div>
-  <script type="module" src="./script/script.js"></script>
-</body>
+    </div>
+    <script type="module" src="./script/script.js"></script>
+  </body>
 </html>

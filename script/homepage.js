@@ -17,14 +17,14 @@ function toggleSidebar() {
 async function fetchData() {
   try {
     var res = [];
-    await fetch("http://localhost:3000/api/warehouse/warehouse")
+    await fetch("http://localhost:3000/api/patient/data")
       .then((response) => response.json())
       .then((data) => {
         for (let i = 0; i < data["data"].length; i++) {
           const element = data["data"][i];
           res.push({
-            name: element["location"],
             id: element["id"],
+            name: element["firstname"] + " " +element['lastname'] + " " + "(" + element['sex'] + ")",
           });
         }
       })
@@ -51,7 +51,7 @@ function displayData(data) {
   for (let i = 0; i < data.length; i++) {
     const element = data[i];
     const listItem = document.createElement("a");
-    listItem.href = "./warehouse.html?id=" + element['id'];
+    listItem.href = "./patient?id=" + element['id'];
     listItem.textContent = element["name"]; // Assuming the API returns an array of objects with a 'name' property
     dataList.appendChild(listItem);
 

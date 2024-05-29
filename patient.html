@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Record</title>
+    <link rel="stylesheet" href="./styles/patient.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <ul>
+        <li><a href="./homepage.html">Home</a></li>
+        <li><a href="./new_visit?id=" id="newItem">Add A New Visit</a></li>
+        <li><button onclick="history.back()">Back</button></li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1 class="patient-name" id="patient-name">Patient page</h1>
+      <div class="patient-info">
+        <div class="patient-info-title">Patient Information</div>
+        <div class="info-row">
+          <div class="info-row-label">Patient Name</div>
+          <div class="info-row-colon">:</div>
+          <div class="info-row-value" id="name"></div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Sex</div>
+          <div class="info-row-colon">:</div>
+          <div class="info-row-value" id="sex"></div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Height</div>
+          <div class="info-row-colon">:</div>
+          <div class="info-row-value" id="height"></div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-label">Weight</div>
+          <div class="info-row-colon">:</div>
+          <div class="info-row-value" id="weight"></div>
+        </div>
+      </div>
+      <div id="apiData"></div>
+    </div>
+  </body>
+  <script type="module" src="./script/patient.js"></script>
+</html>

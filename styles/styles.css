@@ -1,58 +1,107 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    width: 100%;
-    max-width: 400px;
-    margin: 100px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  h2 {
-    text-align: center;
-  }
-  
-  .input-group {
-    margin-bottom: 20px;
-    padding-right: 20px;
-  }
-  
-  .input-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    background: #595959;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    opacity: 1.0;
-  }
-  
-  button:hover {
-    background: #979797;
-    opacity: 0.4;
-    color:#000000;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #233142;
+  padding: 0px;
+  margin: 0px;
+}
+
+.bg{
+  position: absolute;
+}
+
+.main-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  margin: 0px;
+}
+
+.left-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.right-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: #394f6b;
+}
+.container {
+  width: 50%;
+  display: flex;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 5px;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+}
+
+h2 {
+  width: 22vw;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  font-size: large;
+  align-self: center;
+}
+
+.input-group {
+  color: #fff;
+  width: 22vw;
+  margin-bottom: 20px;
+  padding-right: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 22vw;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  transition: 0.3s;
+}
+
+.input-group input:hover {
+  width: 22vw;
+  padding: 10px;
+  font-size: 16px;
+  background: #dadada;
+  border-radius: 5px;
+  border: 1px solid #dadada;
+  color: #fff;
+  transition: 0.3s;
+}
+
+::placeholder{
+  color: #979797;
+}
+
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  background: #f95959;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 1;
+}
+
+button:hover {
+  background: #979797;
+  opacity: 0.4;
+  color: #000000;
+}

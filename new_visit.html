@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Item</title>
+    <link rel="stylesheet" href="./styles/visit.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <ul>
+        <li><a href="./homepage.html">Home</a></li>
+        <li><button onclick="history.back()">Back</button></li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>Add A New Visit</h1>
+      <p>Please enter the visit informations:</p>
+      <div class="label-container">Patient Name</div>
+      <select name="patientName" id="patientName">
+      </select>
+      <div class="label-container">Visit Name</div>
+      <input class="input-field" type="text" id="visitName" required />
+      <div class="label-container">Patient Weight</div>
+      <input class="input-field" type="text" id="weight" required />
+      <div class="label-container">Patient Height</div>
+      <input class="input-field" type="text" id="height" required />
+      <div class="label-container">Doctor's Note</div>
+      <input class="input-field" type="text" id="note" required />
+      <div class="label-container">3D Objects</div>
+      <div class="drop-zone-row">
+        <div class="drop-zone-content">
+          <div class="drop-zone-title">OBJ</div>
+          <input type="file" name="objFile" id="objFile" />
+        </div>
+        <div class="drop-zone-content">
+          <div class="drop-zone-title">MTL</div>
+          <input type="file" name="mtlFile" id="mtlFile" />
+        </div>
+        <div class="drop-zone-content">
+          <div class="drop-zone-title">PNG</div>
+          <input type="file" name="pngFile" id="pngFile" />
+        </div>
+      </div>
+      <button id="myButton" type="submit">Submit</button>
+    </div>
+  </body>
+  <script type="module" src="./script/new_item.js"></script>
+</html>

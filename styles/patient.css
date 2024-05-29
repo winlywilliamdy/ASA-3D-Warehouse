@@ -1,0 +1,126 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  background-color: #233142;
+  padding-top: 20px;
+}
+
+.sidebar h2 {
+  color: white;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar ul li {
+  padding: 8px 16px;
+}
+
+.sidebar ul li a {
+  color: #f95959;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 200ms;
+}
+
+.sidebar ul li a:hover {
+  transition: 200ms;
+  color: #fff;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+.content h1 {
+  color: #233142;
+}
+
+
+.content a{
+  color: white;
+  text-decoration: none;
+  display: flex;
+  transition: 200ms;
+  padding: 2.5%;
+  font-size: small;
+  opacity: 50%;
+  font-weight: 200;
+  border-radius: 5px;
+  background-color: #505050;
+}
+
+.content a:hover{
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: large;
+  padding: 3%;
+  background-color: #233142;
+  opacity: 80%;
+  border-radius: 5px;
+  transition: 100ms;
+}
+
+.divider{
+  height: 85%;
+}
+
+.patient-info{
+  display: flex;
+  height: 20vh;
+  background-color: #505050;
+  border-radius: 5px;
+  padding: 2%;
+  flex-direction: column;
+}
+
+.patient-info-title{
+  color: white;
+  font-size: large;
+  font-weight: 700;
+  margin-bottom: 2%;
+}
+
+.info-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.info-row-label{
+  margin-bottom: 1%;
+  display: flex;
+  width: 12vw;
+  color: white;
+  font-weight: 400;
+}
+
+.info-row-colon{
+  margin-bottom: 1%;
+  display: flex;
+  font-weight: 400;
+  color: white;
+  width: 5vw;
+}
+
+.info-row-value{
+  margin-bottom: 1%;
+  font-weight:400;
+  color: white;
+  display: flex;
+}
