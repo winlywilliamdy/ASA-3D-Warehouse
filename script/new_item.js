@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import queryString from "query-string";
 import {
   getStorage,
   ref,
@@ -6,6 +7,8 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 
+
+const parsed = queryString.parse(location.search);
 const firebaseConfig = {
   apiKey: "AIzaSyAdXlq4uLz8FTviHjI1JED1YSXHwzdrBe8",
   authDomain: "asa-3d-warehouse.firebaseapp.com",
@@ -75,6 +78,7 @@ async function getItemValues() {
       if (!response.ok) {
         throw new Error("Network response was not ok " + response.statusText);
       }
+      window.location.href = "patient?id=" + parsed["id"]
       return response.json(); // Parse the JSON response
     })
     .then((data) => {
